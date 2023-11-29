@@ -22,20 +22,30 @@ Dealer::~Dealer()
 
 }
 
-bool Dealer::PlayBase(Shoe& shoe)
+void Dealer::PlayBase(Shoe& shoe)
 {
+	printf("\n～～～ディーラーのターン～～～\n\n");
+
 	//スコアが16以下の場合hitを続ける
-	while (CalcScore() < 17 && CalcScore() > 0) {
+	while (0 < CalcScore() && CalcScore() < 17) 
+	{
 		//ヒットする
 		Hit(shoe);
 		cout << "hit" << endl;
 		//手札の表示
 		cout << "====================" << endl;
-		cout << "dealer" << endl;
+		cout << GetName() << endl;
 		ShowHand();
 		cout << "====================" << endl;
 	}
-	// バーストしていたら
-	if (CalcScore() <= 0) return false;
-	return true;
+
+	if (!CalcScore())
+	{
+		printf("バーストしてしまいました　＞＜\n");
+	}
+	else
+	{
+		printf("standします\n");
+	}
+	return;
 }

@@ -7,5 +7,5 @@ public:
 	Dealer();				// デフォルトコンストラクタは残しておく
 	Dealer(const char* pName);
 	virtual ~Dealer();
-	bool PlayBase(Shoe& shoe);	// ターン処理
+	void PlayBase(Shoe& shoe) override;	// ターン処理
 };

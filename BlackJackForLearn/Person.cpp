@@ -38,9 +38,12 @@ const char* Person::GetName()const
 	return _pName;
 }
 
-bool Person::Play(Person person)
+bool Person::Play(Shoe& shoe)
 {
-
+	// 派生クラスのPlaybase()を呼ぶ
+	PlayBase(shoe);
+	
+	return CalcScore();	// true or false
 }
 
 // ヒット

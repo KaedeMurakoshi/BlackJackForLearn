@@ -11,10 +11,10 @@ static void ShowResult(Player& player, Dealer& dealer)
 {
     printf("\n～Result～\n\n");
     // 手札をすべて表示
- /*   printf("[あなたの手札]\n");
+    printf("[あなたの手札]\n");
     player.ShowHand();
     printf("\n[ディーラーの手札]\n");
-    dealer.ShowHand();*/
+    dealer.ShowHand();
 
     // スコアが同じのとき
     if (player.CalcScore() == dealer.CalcScore())
@@ -44,7 +44,7 @@ int main()
 
     Shoe shoe;
     Player player("カエデ");
-    Dealer dealer("");
+    Dealer dealer("Faker");
 
     // ２枚引く
     player.Hit(shoe);
@@ -61,11 +61,11 @@ int main()
     dealer.Hit(shoe);
 
     // まずはプレーヤーのターン処理
-    if (player.PlayBase(shoe))
+    if (player.Play(shoe))
     {
         // プレーヤーがスタンドした時の処理
         // ディーラーの自動処理
-        dealer.PlayBase(shoe);
+        dealer.Play(shoe);
         // リザルト表示
         ShowResult(player, dealer);
     }

@@ -5,10 +5,12 @@ class Shoe;
 class Person
 {
 public:
+	virtual void PlayBase(Shoe& shoe) = 0;	// 純粋仮想関数	
+
 	Person(const char* pName);	// コンストラクタ
 	virtual ~Person();			// デストラクタ
 	void Hit(Shoe& shoe);		// ヒット
-	bool Play(Person person);	// 派生クラスのPlayBaseを呼んで結果に応じでtrue,falseを返す
+	bool Play(Shoe& shoe);	// 派生クラスのPlayBaseを呼んで結果に応じでtrue,falseを返す
 	void ShowHand();			// 手札を表示
 	int CalcScore();			// スコアを表示
 	const char* GetName()const;

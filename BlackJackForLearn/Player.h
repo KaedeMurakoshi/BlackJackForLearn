@@ -6,5 +6,5 @@ class Player : public Person
 public:
 	Player(const char* pName);
 	virtual ~Player();
-	bool PlayBase(Shoe& shoe);	// ターン処理
+    void PlayBase(Shoe& shoe) override;	// ターン処理
 };
