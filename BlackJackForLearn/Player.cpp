@@ -16,7 +16,7 @@ Player::~Player()
 }
 
 // ターン処理
-bool Player::Play(Shoe& shoe)
+bool Player::PlayBase(Shoe& shoe)
 {
 	//バーストするまでループ処理
 	while (CalcScore()) {

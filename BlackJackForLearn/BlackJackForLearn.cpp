@@ -61,11 +61,11 @@ int main()
     dealer.Hit(shoe);
 
     // まずはプレーヤーのターン処理
-    if (player.Play(shoe))
+    if (player.PlayBase(shoe))
     {
         // プレーヤーがスタンドした時の処理
         // ディーラーの自動処理
-        dealer.Play(shoe);
+        dealer.PlayBase(shoe);
         // リザルト表示
         ShowResult(player, dealer);
     }

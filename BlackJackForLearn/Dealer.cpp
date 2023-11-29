@@ -22,7 +22,7 @@ Dealer::~Dealer()
 
 }
 
-bool Dealer::Play(Shoe& shoe)
+bool Dealer::PlayBase(Shoe& shoe)
 {
 	//ƒXƒRƒA‚ª16ˆÈ‰º‚Ìê‡hit‚ğ‘±‚¯‚é
 	while (CalcScore() < 17 && CalcScore() > 0) {

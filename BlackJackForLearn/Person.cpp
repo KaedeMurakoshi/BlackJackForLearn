@@ -37,6 +37,12 @@ const char* Person::GetName()const
 {
 	return _pName;
 }
+
+bool Person::Play(Person person)
+{
+
+}
+
 // ƒqƒbƒg
 void Person::Hit(Shoe& shoe)
 {
