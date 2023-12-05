@@ -43,7 +43,7 @@ bool Person::Play(Shoe& shoe)
 	// ”h¶ƒNƒ‰ƒX‚ÌPlaybase(shoe)‚ðŒÄ‚Ô
 	PlayBase(shoe);
 	
-	return CalcScore();	
+	return CalcScore() > 0;	
 }
 
 // ƒqƒbƒg

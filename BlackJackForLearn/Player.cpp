@@ -38,7 +38,8 @@ void Player::PlayBase(Shoe& shoe)
 			continue;
 		}
 		else if (strcmp(str, "stand") == 0) {
-			break;
+			// standしたので終了
+			return;
 		}
 	}
 	//バーストしているので終了
