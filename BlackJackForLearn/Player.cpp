@@ -35,12 +35,12 @@ void Player::PlayBase(Shoe& shoe)
 			cout << GetName() << endl;
 			ShowHand();
 			cout << "====================" << endl;
+			continue;
 		}
 		else if (strcmp(str, "stand") == 0) {
-			//返り値をtrueとして終了
-			return;
+			break;
 		}
 	}
-	//バーストしているのでfalseを返して終了
+	//バーストしているので終了
 	return;
 }
