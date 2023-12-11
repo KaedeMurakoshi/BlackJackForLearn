@@ -44,5 +44,5 @@ Card& Card::operator=(Card& other)
 
 void Card::ShowCard()const	
 {
-	printf("%s‚Ì%d\n", suitName[_suit], _num);
+	printf("%s‚Ì%d\n", suitName[_suit], _num + 1); // ‚P`‚P‚R‚¾‚ªƒf[ƒ^ã‚Í‚O`‚P‚Q
 }
