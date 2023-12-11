@@ -9,6 +9,7 @@ Player::Player(const char* pName) : Person(pName)
 {
 
 }
+
 // デストラクタ
 Player::~Player()
 {

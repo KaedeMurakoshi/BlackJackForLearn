@@ -1,10 +1,38 @@
 ﻿// BlackJackForLearn.cpp : このファイルには 'main' 関数が含まれています。プログラム実行の開始と終了がそこで行われます。
 #include <iostream>
 
+#include"Card.h"
 #include"Shoe.h"
 #include"Player.h"
 #include"Dealer.h"
 using namespace std;
+
+static Player* CreatePlayer()
+{
+    // 一人は必ず生成
+    char name[32];
+    cin >> name;
+    return new Player(name);
+
+    do
+    {
+        int select = 0;
+        cout << "プレーヤーを追加しますか？\n"
+            << "１．はい　２．いいえ" << flush;
+        cin >> select;
+
+        if (select == 1)
+        {
+            cin >> name;
+            char name[32];
+            return new Player(name);
+        }
+        else if (select == 2)
+        {
+            break;
+        }
+    } while (true);
+}
 
 // リザルト
 static void ShowResult(Player& player, Dealer& dealer)
@@ -38,13 +66,16 @@ static void ShowHand(Person& person)
     printf("==================\n");
 }
 
+//実行
 int main()
 {
     srand(time(NULL));
 
     Shoe shoe;
-    Player player("カエデ");
     Dealer dealer("Faker");
+    Player player("カエデ");
+
+    //Player* player = CreatePlayer();
 
     // ２枚引く
     player.Hit(shoe);
@@ -72,8 +103,12 @@ int main()
     else
     {
         printf("バーストしたので君の負けだよん :D\n");
-    }    
+    } 
+
+    //delete[] player;
+
 }
+    
 
 // プログラムの実行: Ctrl + F5 または [デバッグ] > [デバッグなしで開始] メニュー
 // プログラムのデバッグ: F5 または [デバッグ] > [デバッグの開始] メニュー

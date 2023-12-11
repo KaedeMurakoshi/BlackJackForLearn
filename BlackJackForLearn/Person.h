@@ -1,6 +1,8 @@
 #pragma once
-
+#include "Common.h"
+#include "Card.h"
 class Shoe;
+class Card;
 
 class Person
 {
@@ -17,6 +19,6 @@ public:
 
 private:
 	char* _pName;				// –¼‘O
-	int _hand[16];				// èDî•ñ
-	int _handNum;				// èD‚Ì–‡”
+	Card _hand[HAND_NUM];				// èDî•ñ
+	int _cardNum;				// èD‚Ì–‡”
 };
