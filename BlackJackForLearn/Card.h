@@ -5,11 +5,9 @@ class Card
 {
 public:
 	Card();						// コンストラクタ
-	Card(const Card& other);	// コピーコンストラクタ（初期化時の代入に対応）
 	virtual ~Card();			// デストラクタ
 
 	bool operator==(const Card& other)const;	// ==比較に対応
-	Card& operator=(Card& other);				// 代入に対応
 
 	void ShowCard()const;
 

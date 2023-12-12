@@ -11,13 +11,6 @@ Card::Card()
 	_suit = -1;
 }
 
-// コピーコンストラクタ
-Card::Card(const Card& other)
-{
-	_num = other._num;
-	_suit = other._suit;
-}
-
 Card::~Card()
 {
 
@@ -35,12 +28,6 @@ bool Card::operator==(const Card& other)const
 	}
 }
 
-Card& Card::operator=(Card& other)
-{
-	_num = other._num;
-	_suit = other._suit;
-	return *this;
-}
 
 void Card::ShowCard()const	
 {
