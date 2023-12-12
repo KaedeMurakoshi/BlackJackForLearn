@@ -7,8 +7,8 @@ const char* suitName[SUIT_NUM] = { "SPADE", "DIAMOND", "HEART", "CLUB", };
 
 Card::Card()
 {
-	_num = 0;
-	_suit = 0;
+	_num = -1;
+	_suit = -1;
 }
 
 // コピーコンストラクタ
@@ -37,8 +37,8 @@ bool Card::operator==(const Card& other)const
 
 Card& Card::operator=(Card& other)
 {
-	_num = other.GetNum();
-	_suit = other.GetSuit();
+	_num = other._num;
+	_suit = other._suit;
 	return *this;
 }
 

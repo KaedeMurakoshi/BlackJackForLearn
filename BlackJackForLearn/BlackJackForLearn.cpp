@@ -80,7 +80,7 @@ int main()
     Player p4("Player4");
 
     Player playerList[] = {p1, p2, p3, p4};
-
+    
     for (int i = 0; i < 4; ++i)
     {
         // ２枚引く
