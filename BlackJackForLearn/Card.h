@@ -14,8 +14,16 @@ public:
 	// “Ç‚İæ‚èA‘‚«‚İ
 	int GetNum() const{ return _num; }const
 	int GetSuit() const{ return _suit; }const
-	void SetNum(int num) { _num = num; }
-	void SetSuit(int suit) { _suit = suit; }
+	void SetNum(int num) 
+	{ 
+		if (num < 0) return;
+		_num = num; 
+	}
+	void SetSuit(int suit) 
+	{ 
+		if (suit < 0) return;
+		_suit = suit; 
+	}
 
 private:
 	int _num;

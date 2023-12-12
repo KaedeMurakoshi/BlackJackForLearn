@@ -2,8 +2,6 @@
 #include"Common.h"
 #include"Card.h"
 
-class Card;
-
 class Shoe 
 {
 public:
