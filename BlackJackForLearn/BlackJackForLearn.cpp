@@ -72,41 +72,53 @@ int main()
     srand(time(NULL));
 
     Shoe shoe;
-    Dealer dealer("Faker");
-    Player player("カエデ");
+    Dealer dealer;
 
-    //Player* player = CreatePlayer();
+    Player p1("Player1");
+    Player p2("Player2");
+    Player p3("Player3");
+    Player p4("Player4");
 
-    // ２枚引く
-    player.Hit(shoe);
-    player.Hit(shoe);
+    Player playerList[] = {p1, p2, p3, p4};
+
+    for (int i = 0; i < 4; ++i)
+    {
+        // ２枚引く
+        playerList[i].Hit(shoe);
+        playerList[i].Hit(shoe);
+    }
+    
 
     // 1枚引く
     dealer.Hit(shoe);
 
-    // 二人の手札表示
-    ShowHand(player);
+    // プレーヤーの手札表示
+    for (int i = 0; i < 4; ++i)
+    {
+        ShowHand(playerList[i]);
+    }
+    
     ShowHand(dealer);
 
     // 1枚引く
     dealer.Hit(shoe);
 
-    // まずはプレーヤーのターン処理
-    if (player.Play(shoe))
+    for (int i = 0; i < 4; ++i)
     {
-        // プレーヤーがスタンドした時の処理
-        // ディーラーの自動処理
-        dealer.Play(shoe);
-        // リザルト表示
-        ShowResult(player, dealer);
+        playerList[i].Play(shoe);
     }
-    else
+    // まずはプレーヤーのターン処理
+
+    // プレーヤーがスタンドした時の処理
+    // ディーラーの自動処理
+    dealer.Play(shoe);
+
+    // リザルト表示
+    for(int i = 0; i < 4; ++i)
     {
+        ShowResult(playerList[i], dealer);
         printf("バーストしたので君の負けだよん :D\n");
-    } 
-
-    //delete[] player;
-
+    }
 }
     
 
