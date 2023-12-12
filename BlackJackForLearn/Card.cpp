@@ -7,8 +7,8 @@ const char* suitName[SUIT_NUM] = { "SPADE", "DIAMOND", "HEART", "CLUB", };
 
 Card::Card()
 {
-	_num = -1;
-	_suit = -1;
+	_num = 0;
+	_suit = 0;
 }
 
 Card::~Card()
